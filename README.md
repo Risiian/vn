@@ -1,1 +1,2 @@
 # pntitled_vn_project_01-1-.jpeg
+# This is our shitty repository for renpy/py code. There wont be TOO much to do round these parts, but there are some streamiling issues that need to be adressed. The first of these issues is a smart parser, that can parse dialogue statements for certain tags, and perform some audio/visual/etc happening or function. This greatly reduces statement redundancy (You'll see what I mean in the first version of script.rpy). 
