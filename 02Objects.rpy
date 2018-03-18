@@ -1,6 +1,7 @@
-﻿#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-#Shaker class. Creates GUI and sprite shakes ingame.
-
+﻿##This file contains objects and object-methods (characters are object-method hybrids, why i have no idea, renpy default parser makes the distinction somewhere.)
+##Objects include transitions (GUI and visual effects), characters, audio channels,
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#Shaker class. Creates GUI and sprite shakes ingame. 
 init python:    
     import math
     class Shaker(object):
@@ -60,6 +61,7 @@ init python:
     
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  
 #Voice blip callback instantiation  
+#By standard, normal voice blips are squarewaves at a certain frequency of duration .02s, followed by a silence of .03s, creating a .05s iterated sound clip.
     def detectiveVoice(event, **kwargs):
         if event == "show":
             renpy.music.play("detectiveBlip.ogg", channel="sound", loop=True)
@@ -99,6 +101,8 @@ image ctcA:
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #Character instantiation
+#define characterCode = Character("Displayed Character Name",callback=callbackSoundName, ctc="ctcA",ctc_position="fixed")
+#All instantiations must contain the final two arguments above to create the click-to-continue arrow (ctcA).
 define det = Character("Antonia Villafuerte", callback=detectiveVoice,ctc="ctcA",ctc_position="fixed")
 define dett = Character("Antonia Villafuerte {size=-10}{i}(Thinking){/i}{/size}",callback=detectiveVoice,ctc="ctcA",ctc_position="fixed",what_color="#53c0e8")
 define detu = Character(" ", callback=detectiveVoice,ctc="ctcA",ctc_position="fixed")
@@ -114,6 +118,7 @@ define dadu = Character(" ", callback=dadVoice,ctc="ctcA",ctc_position="fixed")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #Other instantiations
+##Transition instantiations: ATL
 define sshake = Shake((0, 0, 0, 0), 1.0, dist=10)
 define mshake = Shake((0, 0, 0, 0), 1.0, dist=30)
 define lshake = Shake((0, 0, 0, 0), 1.0, dist=50)
