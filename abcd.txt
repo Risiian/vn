@@ -1,6 +1,0 @@
-AAAAAAAAAAAAAAAaaaa
-BBBBBB
-CC
-DDDDDDDdddd E
-FFFFFFFFFFFFFFffff
-There should be some of the letter that follows 'F' on this line, but there aren't any.
