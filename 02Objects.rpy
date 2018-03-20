@@ -79,11 +79,62 @@ init python:
             renpy.music.play("dad.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+    def otakuVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("otakuBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound") 
+    def fashonistaVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("fashonistaBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def sportsVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("sportsBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def chessmasterVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("chessmasterBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def roboticistVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("roboticistBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def sailorVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("sailorBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def drunkardVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("drunkardBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def programmerVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("programmerBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def romanticistVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("romanticistBlip.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+    def dadVoice(event, **kwargs):
+        if event == "show":
+            renpy.music.play("dad.ogg", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
     def typeVoice(event, **kwargs):
         if event == "show":
             renpy.music.play("type.ogg", channel="sound", loop=True)
         elif event == "slow_done" or event == "end":
             renpy.music.stop(channel="sound")
+
     def brd(event, **kwargs):
         if event == "show":
             renpy.music.play("brda.ogg", channel="sound", loop=True)
@@ -109,6 +160,16 @@ define detu = Character(" ", callback=detectiveVoice,ctc="ctcA",ctc_position="fi
 define n = Character(" ", callback=detectiveVoice,ctc="ctcA",ctc_position="fixed")   #"Narration' Voice (1st person past, from AV)
 define dgl = Character("Vinny Bellucci", callback=druglordVoice,ctc="ctcA",ctc_position="fixed")
 define dglu = Character("???", callback=druglordVoice,ctc="ctcA",ctc_position="fixed")
+define otk = Character("Otaku {size=-10}{i}(Unnamed!){/i}{/size}", callback=otakuVoice,ctc="ctcA",ctc_position="fixed")
+define fsh = Character("Fashonista {size=-10}{i}(Unnamed!){/i}{/size}", callback=fashonistaVoice,ctc="ctcA",ctc_position="fixed")
+define slr = Character("Jessica Meyers", callback=sailorVoice,ctc="ctcA",ctc_position="fixed")
+define prg = Character("Programmer{size=-10}{i}(Unnamed!){/i}{/size}", callback=programmerVoice,ctc="ctcA",ctc_position="fixed")
+define rob = Character("Roboticist{size=-10}{i}(Unnamed!){/i}{/size}", callback=roboticistVoice,ctc="ctcA",ctc_position="fixed")
+define chs = Character("Chessmaster{size=-10}{i}(Unnamed!){/i}{/size}", callback=chessmasterVoice,ctc="ctcA",ctc_position="fixed")
+define rom = Character("Ian Novakov", callback=romanticistVoice,ctc="ctcA",ctc_position="fixed")
+define spj = Character("Lex Wolfe", callback=sportsVoice,ctc="ctcA",ctc_position="fixed")
+define drk = Character("Alan Braxton", callback=drunkardVoice,ctc="ctcA",ctc_position="fixed")
+
 define letter = Character("Letter", callback=typeVoice,ctc="ctcA",ctc_position="fixed")
 define brd = Character("Tom Brady", callback=brd,ctc="ctcA",ctc_position="fixed")
 

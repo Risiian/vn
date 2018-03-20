@@ -1,13 +1,17 @@
 ﻿##This file contains the definition of renpy and non-renpy level methods. This does not include objects or object-methods.
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-## Improved Parser. Called by prefacing dialoge with "l", then character name, then text.
-## Special characters will no longer need to have the \ character before them (ex. quotation marks, dollar signs etc)
+## Improved Parser. Called by prefacing dialoge with "l", then character name, then text, surrounded by quotes.
+## Special characters still need to have the \ character before them (ex. quotation marks, dollar signs etc)
 ## Will detect "tags" defined by a three letter word beginning with a capital Z (Z**), and perform a certain visual effect (ex. tag ZFB will cause a white flash)
 python early:
     import re
     def parse_smartline(lex): ##Pre-parses string and separates into 2 variables: who, the name of the character objects; and what, the requested dialogue. Executed first when "l" is called.
         who = lex.simple_expression()
-        what = lex.rest()
+        what = lex.string()
+        print(who)
+        print(what)
+        #print(w2)
+        #print(w3)
         return (who, what)
 
     def execute_smartline(o):   ##Auto adds tags to "what" string for pauses after punctuation. Scans for "Z**" tags, and displays them at the requested point during dialogue. Z** tags are auto removed.
@@ -18,14 +22,16 @@ python early:
         nwstr="{nw}"
         what = re.sub("\. ",'.{w=.6} ',what)     ##Regex for adding post-punctuation tags
         what = re.sub("\, ",',{w=.3} ',what)
-        what = re.sub("\- ",'-{w=.6} ',what)
+        what = re.sub("\- ",'—{w=.6} ',what)
+        what = re.sub("\— ",'—{w=.6} ',what)
         what = re.sub("\; ",';{w=.6} ',what)
         what = re.sub("\: ",':{w=.6} ',what)
         what = re.sub("\? ",'?{w=.5} ',what)
         what = re.sub("\! ",'!{w=.5} ',what)
-        what = re.sub("\.\" ",'.\"{w=.6} ',what)     ##Regex for adding post-punctuation tags
+        what = re.sub("\.\" ",'.\"{w=.6} ',what)     ##Regex for adding post-punctuation tags in doublequotes
         what = re.sub("\,\" ",',\"{w=.3} ',what)
-        what = re.sub("\-\" ",'-\"{w=.6} ',what)
+        what = re.sub("\-\" ",'—\"{w=.6} ',what)
+        what = re.sub("\—\" ",'—\"{w=.6} ',what)
         what = re.sub("\;\" ",';\"{w=.6} ',what)
         what = re.sub("\:\" ",':\"{w=.6} ',what)
         what = re.sub("\?\" ",'?\"{w=.5} ',what)
@@ -42,6 +48,7 @@ python early:
             if tagLocation==-1:
                 nwstr=what[len(what)-1]+" "
             renpy.say(eval(who),(what[0:begin]+"{fast}"+what[begin:tagLocation])+nwstr)
+            
             if tagLocation!=-1:
                 fx(cmd) ##Passes string cmd to fx(str) and creates corresponding audiovisual effect before next chunk of text is displayed.
             what=what[0:tagLocation]+what[tagLocation+4:len(what)]
@@ -70,7 +77,7 @@ python early:
         elif s=="Z05":
             renpy.play("oops.ogg")
         elif s=="Z06":
-            renpy.play("oops.ogg")
+            renpy.play("gun1.ogg")
         elif s=="Z07":
             renpy.play("shock1.ogg")
         elif s=="Z08":
@@ -101,8 +108,7 @@ python early:
             renpy.exports.transition(mshake)
         elif s=="ZLS":
             renpy.exports.transition(lshake)
-        elif s=="ZDT":
-            who="dadu"
+
 
     renpy.register_statement("l", parse=parse_smartline, execute=execute_smartline, lint=lint_smartline)
     

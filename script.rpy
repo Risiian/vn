@@ -1,24 +1,29 @@
-<<<<<<< HEAD
-﻿
-=======
-﻿# Version
-# Remember that name color can be input in instantiation, hex values for arg (?)
-
-# Prerun setup
->>>>>>> 0f94060069ac6251ad1f0c2b8d185876058fa5a6
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 #-------------------------------------------------------------------------------------------- Game start
 label start:
 scene bgb
-l detu "There isnt much round theser Z02 parts," said big hoss.
-l det sdfsdfsfsdfsfasdf ZFB asfasdf. ZFB Z02 ZLS NO, THATS WRONG!
-l det SFSDF ZMS fasdfasdfasdf.
-l dgl Ahh, i see. This isnt working, i guess.
-l det but it should be. right? Why not? SFDFSDFDFSDFDFaaa
-l det asdfasdfasdf.
-l dgl asdfasdfdsf. SDFSDFSDF ZFB dfsdf
-l detu AAAAAA ZFB BBBBBBB{w=.3}BBBBBBB ZFB ZWS CCCCCCCCCCCCCC ZWS DDDDDDDDD ZFB EEEEEEEEEEEE ZFB FFFFFFFFFFFFFFFF!
+l det "Check out these ZF2 Z02 ZMS nutty effects. NUUUUUUUUTTY"
+l chs "Use this tag to create time pauses {w=1}but you won't be able to see the tag in the text. You can only see it in script.rpy."
+l chs "I love {w=1.5} chess. More than anything."
+l rom "Chess, eh? Z07 ZLS That's a pretty fuckin' beta-male hobby, if you ask me. Not as bad as ol' sweaty over here."R
+l prg "S-sweaty? You calling {i}ME{/i} ZFB Z09 ZSS beta? Can you even create {i}ITALIC{/i}, {b}BOLD{/b}, or {u}UNDERLINED{/u} text, using these closing tags? How about Z02 ZF2 ZLS {i}{b}{u}BOLD UNDERLINE ITALIC TEXT?!{/i}{/b}{/u}"
+l dgl "You can make text disappear instantly by using the nw tag. some people find it annoying you automatically dismiss text, but you can use the scroll wheel to go to previous dialogue. but personally I think that {nw}"
+l spj "Renpy even allows hyperlinks in the middle of dialogue. Make sure to check out {a=http://toplevelsports.net/}my blog, Top Level Sports!{/a}. Or don't, I don't care. Also- hyphens are automatically turned into em-dashes. COOL"
+l rob "I BUILD GIANT ROBOTS, WHICH MAKE TEXT APPEAR INSTANTLY. USING THE fast TAG. {fast} YOU CAN USE THIS FUNCTION TO GET YOUR TEXT INSTANTLY"
+l drk "{size=+70}HUGE TEXT{/size}"
+l det "Use a backslash to creates \"doublequotes\" in lines of text, but youll rarely need this. Also, BRADEE Parser automatically creates pauses after punctuation."
+l slr "You can use the phrase play music \"filename.extension\" to play some sick tunes."
+play soundmain "smack1.ogg" noloop
+play soundmain "aha.ogg" noloop
+l fsh "You can even play sounds in between executed renpy lines, by using the phrase play soundmain \"filename.extension\" noloop. Make sure to append noloop or the sound will loop forever!"
+stop music
+l otk "The fuck? Use the stop music phrase to stop that garbage and play some{nw}"
+play music "smoothhalationcriminal.ogg"
+l otk "The fuck? Use the stop music phrase to stop that garbage and play some{fast} {i}REAL{/i} music, like this. Nothing gets me going quite like THE THREE TIME GRAMMY AWARD WINNING 1999 SUMMER HIT 'Smooth' BY Santana FEATURING Rob Thomas FROM THE BAND Matchbox 20 ALSO FEATURING THE FICTIONAL J-POP IDOL GROUP μ's FROM THE HIT MULTIMEDIA FRANCHISE Minecraft AND ALSO FEATURING Michael Jackson FROM THE 80's AND EARLIER FROM THE DISCO-POP GROUND The Jackson 5 tm, AS WRITTEN BY Itaal Shur, A FAMOUS SONGWRITER THAT DOES WORK FOR THE BAND Santana WHICH BY THE WAY ISNT JUST ONE PERSON THE NAME REFERS TO THE GROUP AS A WHOLE."
+l otk "Remember to not type too much text like that, it makes the text box screwy. Only put reasonable amounts of text on one line! \n Also, use the backslash-n escape tag to create a new line."
+
+l detu AAAAAA ZFB BBBBBBB{w=.3}BBBBBBB ZFB ZWS CCCCC'CCCCCCCCC ZWS DDDDDDDDD ZFB EEEEEEEEEEEE ZFB FFFFFFFFFFFFFFFF!
 detu "Augh,{w=.4} my head hurts."
 dadu "\"Take some advil,{w=.2} walk it off,\" {nw}"
 detu "\"Take some advil, {w=.35}walk it off,\"{fast}{w=.6} my father would say."
